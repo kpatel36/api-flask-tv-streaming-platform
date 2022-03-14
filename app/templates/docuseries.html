@@ -1,0 +1,77 @@
+{% extends 'components/layout.html' %} 
+
+{% block title %}
+    DOCUSERIES
+{% endblock title %} 
+
+
+{% block content %} 
+    <div class="container">
+        <div class="row">
+            <div class="group-header">CRIMES</div>
+            <div class="card-group">
+                {% for i in range(crimes|length) %}
+                    <div class="card">
+                        <img src="{{ crimes[i][2] }}" class="card-img" alt="{{ crimes[i][0] }}">
+                        <div class="card-body">
+                            <p class="card-title">{{ crimes[i][0] }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="group-header">FOOD</div>
+            <div class="card-group">
+                {% for i in range(food|length) %}
+                    <div class="card">
+                        <img src="{{ food[i][2] }}" class="card-img" alt="{{ food[i][0] }}">
+                        <div class="card-body">
+                            <p class="card-title">{{ food[i][0] }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="group-header">TRAVEL</div>
+            <div class="card-group">
+                {% for i in range(travel|length) %}
+                    <div class="card">
+                        <img src="{{ travel[i][2] }}" class="card-img" alt="{{ travel[i][0] }}">
+                        <div class="card-body">
+                            <p class="card-title">{{ travel[i][0] }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="group-header">LEARNING</div>
+            <div class="card-group">
+                {% for i in range(learning|length) %}
+                    <div class="card">
+                        <img src="{{ learning[i][2] }}" class="card-img" alt="{{ learning[i][0] }}">
+                        <div class="card-body">
+                            <p class="card-title">{{ learning[i][0] }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="group-header">NATURE</div>
+            <div class="card-group">
+                {% for i in range(nature|length) %}
+                    <div class="card">
+                        <img src="{{ nature[i][2] }}" class="card-img" alt="{{ nature[i][0] }}">
+                        <div class="card-body">
+                            <p class="card-title">{{ nature[i][0] }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+    {% endblock content %}

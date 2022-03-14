@@ -53,28 +53,37 @@ def drama_shows():
 
 @app.route('/docuseries')
 def docuseries():
-    crime_docuseries={}
+    crime_docuseries={'Making a Murderer': 7989, 'Worst Roommate Ever': 60061,'Surviving R Kelly':40280, 'Don\t F With Cats':45322, 'The Jinx': 1542, 'Evil Genius':36280, 'Tiger King':46381, 'The Staircase':13645, 'The Keepers':27435}
     crimes = show_info(crime_docuseries)
-    food_docuseries = {}
+    food_docuseries = {'Chef\'s Table':3252, 'Restaurants on the Edge':46285, 'School of Chocolate': 58165, 'Taco Chronicles':43010, 'Anthony Bourdain: Parts Unknown':255, 'Salt Fat Acid Heat':38024, 'Stanley Tucci: Searching for Italy':53444}
     food = show_info(food_docuseries)
-    travel_docuseries = {}
+    travel_docuseries = {'Salt Fat Acid Heat':38024, 'Restaurants on the Edge':46285, 'Street Food: Latin America':49108, 'Stanley Tucci: Searching for Italy':53444}
     travel=show_info(travel_docuseries)
-    return render_template ('docuseries.html', crimes=crimes, food=food, travel=travel)
+    nature_docuseries = {'Night on Earth': 46002, 'Attenborough: Life in Colour':53687, 'Our Planet':17868}
+    nature=show_info(nature_docuseries)
+    learning_docuseries={'Formula 1: Drive to Success': 41074, 'My Next Guest': 34258,  'Wild Wild Country': 35097, 'Explained':36901, 'The Mind, Explained': 43577 }
+    learnings=show_info(learning_docuseries)
+    return render_template ('docuseries.html', crimes=crimes, food=food, travel=travel, nature=nature,learning=learnings)
 
 @app.route('/reality')
 def reality_shows():
-    print('reality jsdf')
-    return render_template ('reality.html')
+    reality_shows1={'Keeping Up with the Kardashians': 575, 'Love is Blind': 46167, 'The Bachelor': 914, 'Married at First Sight': 2709, '90 Day Fiance':3139}
+    reality_show1=show_info(reality_shows1)
+    return render_template ('reality.html', reality_show1=reality_show1)
 
 @app.route('/romance')
 def romance():
-    print('romance')
-    return render_template ('romance.html')
+    romance_shows={'Bridgerton':42966, 'Outlander':43, 'How I Met Your Mother':171, 'Younger': 623, 'The Bold Type':15324, 'Emily in Paris': 41632, 'The Fosters':198, 'Sweet Magnolias':38894, 'This is Us': 17128, 'Jane the Virgin':128, 'The Bold Type': 15324, 'Virgin River':38893, 'Hart of Dixie': 301, 'Gilmore Girls':525, 'Hart of Dixie':301, 'When Calls the Heart': 2091}
+    romances=show_info(romance_shows)
+    reality_romances ={'Love is Blind': 46167, 'The Bachelor': 914, 'Married at First Sight': 2709, '90 Day Fiance':3139}
+    reality_romance = show_info(reality_romances)
+    return render_template ('romance.html', romances=romances, reality_romance=reality_romance)
 
 @app.route('/supernatural')
 def supernatural():
-    print('suuuuupernatural')
-    return render_template ('supernatural.html')
+    supernatural_shows = {'Game of Thrones': 82, 'The Flash':13, 'A Discovery of Witches': 31339, 'The Boys':15299, 'The Magicians': 3083, 'The Vampire Diaries':63, 'Stranger Things':2993, 'Shadowhunters':2158 , 'The Umbrella Academy': 30386}
+    supernatural=show_info(supernatural_shows)
+    return render_template ('supernatural.html', supernatural=supernatural)
 
 @app.route('/thriller')
 def thriller():

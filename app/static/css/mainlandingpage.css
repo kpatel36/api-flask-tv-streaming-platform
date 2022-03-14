@@ -1,5 +1,5 @@
 body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Tahoma', sans-serif;
     color: aliceblue;
     background-color: rgb(33, 36, 51);
 }
@@ -15,7 +15,7 @@ body{
 
 .card-group {
     display:flex;
-    overflow-y:clip;
+    overflow-y:hidden;
     overflow-x: scroll;
     padding: 25px;
     
