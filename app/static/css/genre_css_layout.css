@@ -1,0 +1,43 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: aliceblue;
+    background-color: rgb(33, 36, 51);
+}
+
+.card {
+    width:100%;
+    object-fit: contain;
+    max-height: 350px;
+    margin-right: 10px;
+    transition: transform 450ms;
+    text-align: center;
+    background-color: transparent;
+}
+
+.card-group {
+    display:flex;
+    overflow-y:clip;
+    overflow-x: scroll;
+    padding: 25px;
+    
+}
+
+.card-title{
+    font-size: large;
+}
+
+.card-img {
+    border: 2px solid darkslategrey;
+    border-radius: 30px;
+}
+
+.card:hover{
+    transform: scale(1.15);
+    border:2px solid rgb(12, 17, 17);
+    border-radius: 30px;
+    padding: 15px;
+}
+
+.card-group::-webkit-scrollbar {
+    display: none;
+}

@@ -1,0 +1,48 @@
+{% extends 'components/layout.html' %} 
+
+{% block title %}
+    COMEDY
+{% endblock title %}
+
+{% block css %}
+{% endblock css %}
+
+{% block content %}
+<div class = 'row'>
+    <h1 class ='group-header'>SITCOMS</h1>
+    <div class="card-group">
+        {% for i in range (sitcom1|length) %}
+            <div class="card">
+                <img src="{{ sitcom1[i][2] }}" class="card-img" alt="{{ sitcom1[i][0] }}">
+                <div class="card-body">
+                    <p class="card-title">{{ sitcom1[i][0] }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<div class = 'row'>
+    <div class="card-group">
+        {% for i in range (sitcom2|length) %}
+            <div class="card">
+                <img src="{{ sitcom2[i][2] }}" class="card-img" alt="{{ sitcom2[i][0] }}">
+                <div class="card-body">
+                    <p class="card-title">{{ sitcom2[i][0] }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="row">
+    <div class="card-group">
+        {% for i in range(animated|length) %}
+            <div class="card">
+                <img src="{{ animated[i][2] }}" class="card-img" alt="{{ animated[i][0] }}">
+                <div class="card-body">
+                    <p class="card-title">{{ animated[i][0] }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content%}

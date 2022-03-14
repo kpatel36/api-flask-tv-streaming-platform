@@ -1,0 +1,60 @@
+{% extends 'components/layout.html' %} 
+
+{% block title %}
+    DRAMAS
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <h1 class="group-header">DRAMAS</h1>
+            <div class="card-group">
+                {% for i in range(dramas1|length) %}
+                    <div class="card">
+                        <img src="{{ dramas1[i][2] }}" class="card-img" alt="{{ dramas1[i][0] }}">
+                        <div class="card-body">
+                            <p class="card-title">{{ dramas1[i][0] }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="card-group">
+                {% for i in range(dramas2|length) %}
+                    <div class="card">
+                        <img src="{{ dramas2[i][2] }}" class="card-img" alt="{{ dramas2[i][0] }}">
+                        <div class="card-body">
+                            <p class="card-title">{{ dramas2[i][0] }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="card-group">
+                {% for i in range(dramas3|length) %}
+                    <div class="card">
+                        <img src="{{ dramas3[i][2] }}" class="card-img" alt="{{ dramas3[i][0] }}">
+                        <div class="card-body">
+                            <p class="card-title">{{ dramas3[i][0] }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="card-group">
+                {% for i in range(dramas4|length) %}
+                    <div class="card">
+                        <img src="{{ dramas4[i][2] }}" class="card-img" alt="{{ dramas4[i][0] }}">
+                        <div class="card-body">
+                            <p class="card-title">{{ dramas4[i][0] }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+{% endblock content %}
