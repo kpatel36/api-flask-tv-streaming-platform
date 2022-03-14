@@ -5,31 +5,28 @@
 {% endblock title %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="card-group">
-                {% for i in range(thrillers1|length) %}
-                    <div class="card">
-                        <img src="{{ thrillers1[i][2] }}" class="card-img" alt="{{ thrillers1[i][0] }}">
-                        <div class="card-body">
-                            <p class="card-title">{{ thrillers1[i][0] }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
+<div class="row">
+    <div class="card-group">
+        {% for i in range(thrillers1|length) %}
+            <div class="card">
+                <img src="{{ thrillers1[i][2] }}" class="card-img" alt="{{ thrillers1[i][0] }}">
+                <div class="card-body">
+                    <p class="card-title">{{ thrillers1[i][0] }}</p>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="card-group">
-                {% for i in range(thrillers2|length) %}
-                    <div class="card">
-                        <img src="{{ thrillers2[i][2] }}" class="card-img" alt="{{ thrillers2[i][0] }}">
-                        <div class="card-body">
-                            <p class="card-title">{{ thrillers2[i][0] }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-
+        {% endfor %}
     </div>
+</div>
+<div class="row">
+    <div class="card-group">
+        {% for i in range(thrillers2|length) %}
+            <div class="card">
+                <img src="{{ thrillers2[i][2] }}" class="card-img" alt="{{ thrillers2[i][0] }}">
+                <div class="card-body">
+                    <p class="card-title">{{ thrillers2[i][0] }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock content %}

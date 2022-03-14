@@ -1,151 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='../static/css/mainlandingpage.css'>
-    <title>BingeBox | Home</title>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{{ url_for('home')}}">BingeBox</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('action_shows') }}">Action</a>
-                </li>
-                <li class="nav-item active">
-                <a class="nav-link" href="{{ url_for('comedy_shows') }}">Comedy<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                <a class="nav-link" href="{{ url_for('drama_shows') }}">Drama<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                <a class="nav-link" href="{{ url_for('docuseries') }}">Docuseries<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                <a class="nav-link" href="{{ url_for('reality_shows') }}">Reality<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                <a class="nav-link" href="{{ url_for('romance') }}">Romance<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                <a class="nav-link" href="{{ url_for('supernatural') }}">Supernatural<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                <a class="nav-link" href="{{ url_for('thriller') }}">Thriller<span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="container">
-        <!--Comedies Reel-->
-        <div class="row">
-            <h1 class="group-header">COMEDIES</h1>
-            <div class="card-group">
-                {% for i in range(homepage_sitcom_reel|length) %}
-                    <div class="card">
-                        <img src="{{ homepage_sitcom_reel[i][2] }}" class="card-img" alt="{{ homepage_sitcom_reel[i][0] }}">
-                        <div class="card-body">
-                            <p class="card-title">{{ homepage_sitcom_reel[i][0] }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-        <!-- DRAMAS Reel -->
-        <div class="row">
-            <h1 class="group-header">DRAMAS</h1>
-            <div class="card-group">
-                {% for i in range(homepage_dramas_reel|length) %}
-                    <div class="card">
-                        <img src="{{ homepage_dramas_reel[i][2] }}" class="card-img" alt="{{ homepage_dramas_reel[i][0] }}">
-                        <div class="card-body">
-                            <p class="card-title">{{ homepage_dramas_reel[i][0] }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-        <!-- ACTION SHORT LIST-->
-        <div class="row">
-            <h1 class="group-header">ACTION</h1>
-            <div class="card-group">
-                {% for i in range(homepage_action_reel|length) %}
-                    <div class="card">
-                        <img src="{{ homepage_action_reel[i][2] }}" class="card-img" alt="{{ homepage_action_reel[i][0] }}">
-                        <div class="card-body">
-                            <p class="card-title">{{ homepage_action_reel[i][0] }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="row">
-            <h1 class="group-header">DOCUSERIES</h1>
-            <div class="card-group">
-                {% for i in range(homepage_docuseries_reel|length) %}
-                    <div class="card">
-                        <img src="{{ homepage_docuseries_reel[i][2] }}" class="card-img" alt="{{ homepage_docuseries_reel[i][0] }}">
-                        <div class="card-body">
-                            <p class="card-title">{{ homepage_docuseries_reel[i][0] }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-        <!-- SUPERNATURAL SHORT LIST-->
-        <div class="row">
-            <h1 class="group-header">SUPERNATURAL SERIES</h1>
-            <div class="card-group">
-                {% for i in range(homepage_supernatural_reel|length) %}
-                    <div class="card">
-                        <img src="{{ homepage_supernatural_reel[i][2] }}" class="card-img" alt="{{ homepage_supernatural_reel[i][0] }}">
-                        <div class="card-body">
-                            <p class="card-title">{{ homepage_supernatural_reel[i][0] }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-        
-        <!--ROMANCE-->
-        <div class="row">
-            <h1 class="group-header">ROMANCE</h1>
-            <div class="card-group">
-                {% for i in range(homepage_romance_reel|length) %}
-                    <div class="card">
-                        <img src="{{ homepage_romance_reel[i][2] }}" class="card-img" alt="{{ homepage_romance_reel[i][0] }}">
-                        <div class="card-body">
-                            <p class="card-title">{{ homepage_romance_reel[i][0] }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
+{% extends 'components/layout.html' %} 
 
-        <!--REALITY TV-->
-        <div class="row">
-            <h1 class="group-header">REALITY TV</h1>
-            <div class="card-group">
-                {% for i in range(homepage_reality_reel|length) %}
-                    <div class="card">
-                        <img src="{{ homepage_reality_reel[i][2] }}" class="card-img" alt="{{ homepage_reality_reel[i][0] }}">
-                        <div class="card-body">
-                            <p class="card-title">{{ homepage_reality_reel[i][0] }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
+{% block title %}
+    HOME
+{% endblock title %} 
+
+
+{% block content %} 
+<!--Comedies Reel-->
+<div class="row">
+    <h1 class="group-header ml-5 mt-5">COMEDIES</h1>
+    <div class="card-group">
+        {% for i in range(homepage_sitcom_reel|length) %}
+            <div class="card">
+                <img src="{{ homepage_sitcom_reel[i][2] }}" class="card-img" alt="{{ homepage_sitcom_reel[i][0] }}">
+                <div class="card-body">
+                    <p class="card-title">{{ homepage_sitcom_reel[i][0] }}</p>
+                </div>
             </div>
-        </div>
-    </div>   
-    
-</body>
-</html>
+        {% endfor %}
+    </div>
+</div>
+<!-- DRAMAS Reel -->
+<div class="row">
+    <h1 class="group-header  ml-5 mt-5">DRAMAS</h1>
+    <div class="card-group">
+        {% for i in range(homepage_dramas_reel|length) %}
+            <div class="card">
+                <img src="{{ homepage_dramas_reel[i][2] }}" class="card-img" alt="{{ homepage_dramas_reel[i][0] }}">
+                <div class="card-body">
+                    <p class="card-title">{{ homepage_dramas_reel[i][0] }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- ACTION SHORT LIST-->
+<div class="row">
+    <h1 class="group-header  ml-5 mt-5">ACTION</h1>
+    <div class="card-group">
+        {% for i in range(homepage_action_reel|length) %}
+            <div class="card">
+                <img src="{{ homepage_action_reel[i][2] }}" class="card-img" alt="{{ homepage_action_reel[i][0] }}">
+                <div class="card-body">
+                    <p class="card-title">{{ homepage_action_reel[i][0] }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="row">
+    <h1 class="group-header  ml-5 mt-5">DOCUSERIES</h1>
+    <div class="card-group">
+        {% for i in range(homepage_docuseries_reel|length) %}
+            <div class="card">
+                <img src="{{ homepage_docuseries_reel[i][2] }}" class="card-img" alt="{{ homepage_docuseries_reel[i][0] }}">
+                <div class="card-body">
+                    <p class="card-title">{{ homepage_docuseries_reel[i][0] }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- SUPERNATURAL SHORT LIST-->
+<div class="row">
+    <h1 class="group-header  ml-5 mt-5">SUPERNATURAL SERIES</h1>
+    <div class="card-group">
+        {% for i in range(homepage_supernatural_reel|length) %}
+            <div class="card">
+                <img src="{{ homepage_supernatural_reel[i][2] }}" class="card-img" alt="{{ homepage_supernatural_reel[i][0] }}">
+                <div class="card-body">
+                    <p class="card-title">{{ homepage_supernatural_reel[i][0] }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!--ROMANCE-->
+<div class="row">
+    <h1 class="group-header  ml-5 mt-5">ROMANCE</h1>
+    <div class="card-group">
+        {% for i in range(homepage_romance_reel|length) %}
+            <div class="card">
+                <img src="{{ homepage_romance_reel[i][2] }}" class="card-img" alt="{{ homepage_romance_reel[i][0] }}">
+                <div class="card-body">
+                    <p class="card-title">{{ homepage_romance_reel[i][0] }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!--REALITY TV-->
+<div class="row">
+    <h1 class="group-header  ml-5 mt-5">REALITY TV</h1>
+    <div class="card-group">
+        {% for i in range(homepage_reality_reel|length) %}
+            <div class="card">
+                <img src="{{ homepage_reality_reel[i][2] }}" class="card-img" alt="{{ homepage_reality_reel[i][0] }}">
+                <div class="card-body">
+                    <p class="card-title">{{ homepage_reality_reel[i][0] }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

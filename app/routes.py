@@ -7,7 +7,7 @@ from .services import show_info
 @app.route('/')
 def home():
     sitcom_short_list = {'Arrested Development':321, 'The Simpsons': 83, 'Parks and Recreation':174, 'Brooklyn Nine-Nine':49, 'Friends':431, 'Community':318, 'The Office':526, 'Young and Hungry':1745, 'It\'s Always Sunny in Philadelphia':347, 'The Standups':29821}
-    reality_show_short_list = {'Keeping Up with the Kardashians': 575, 'Love is Blind': 46167, 'The Bachelor': 914, 'Married at First Sight': 2709, '90 Day Fiance':3139}
+    reality_show_short_list = {'Real Housewives of Beverly Hills':745, 'Keeping Up with the Kardashians': 575, 'Love is Blind': 46167, 'The Bachelor': 914, 'Married at First Sight': 2709, '90 Day Fiance':3139}
     dramas_short_list = {'24':167, 'Breaking Bad':169, 'Dirty John':34649, 'Pieces of Her':40864,'CSI: Miami':576, 'Squid Game': 43687, 'Grey\'s Anatomy':67, 'How to Get Away with Murder':52, 'Scandal':98, 'American Crime Story': 2029}
     supernatural_short_list = {'Game of Thrones': 82, 'The Flash':13, 'A Discovery of Witches': 31339, 'The Boys':15299, 'The Magicians': 3083, 'The Vampire Diaries':63, 'Stranger Things':2993, 'Shadowhunters':2158 , 'The Umbrella Academy': 30386, }
     action_short_list = {'Blindspot': 1855, 'Vikings':29, 'Burn Notice': 667, 'Money Heist':27436, 'Arrow':4, 'The Flash':13, 'CSI: NY': 749, 'Chuck':168, 'Covert Affairs':345}
@@ -67,8 +67,9 @@ def docuseries():
 
 @app.route('/reality')
 def reality_shows():
-    reality_shows1={'Keeping Up with the Kardashians': 575, 'Love is Blind': 46167, 'The Bachelor': 914, 'Married at First Sight': 2709, '90 Day Fiance':3139}
+    reality_shows1={'Real Housewives of Beverly Hills':745, 'Real Housewives of New York City':750, 'Keeping Up with the Kardashians': 575, 'Love is Blind': 46167, 'The Bachelor': 914, 'Married at First Sight': 2709, '90 Day Fiance':3139, 'The Real Housewives of Orange County': 846, 'The Real Housewives of New Jersey':521, 'The Real Housewives of Atlanta':597}
     reality_show1=show_info(reality_shows1)
+    reality_cooking_shows={'The Great British Baking Show':2950, }
     return render_template ('reality.html', reality_show1=reality_show1)
 
 @app.route('/romance')

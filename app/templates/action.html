@@ -5,18 +5,17 @@
 {% endblock title %}
 
 {% block content %}
-<div class = "container">
-    <div class = "row">
-        <div class = "card-group">
-            {% for i in range (actions|length) %}
-                <div class="card">
-                    <img src="{{ actions[i][2] }}" class="card-img" alt="{{ actions[i][0] }}">
-                    <div class="card-body">
-                        <p class="card-title">{{ actions[i][0] }}</p>
-                    </div>
+
+<div class = "row">
+    <div class = "card-group">
+        {% for i in range (actions|length) %}
+            <div class="card">
+                <img src="{{ actions[i][2] }}" class="card-img" alt="{{ actions[i][0] }}">
+                <div class="card-body">
+                    <p class="card-title">{{ actions[i][0] }}</p>
                 </div>
-            {% endfor %}
-        </div>
+            </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock content%}

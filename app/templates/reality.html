@@ -5,18 +5,16 @@
 {% endblock title %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="card-group">
-                {% for i in range(reality_show1|length) %}
-                    <div class="card">
-                        <img src="{{ reality_show1[i][2] }}" class="card-img" alt="{{ reality_show1[i][0] }}">
-                        <div class="card-body">
-                            <p class="card-title">{{ reality_show1[i][0] }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
+<div class="row">
+    <div class="card-group">
+        {% for i in range(reality_show1|length) %}
+            <div class="card">
+                <img src="{{ reality_show1[i][2] }}" class="card-img" alt="{{ reality_show1[i][0] }}">
+                <div class="card-body">
+                    <p class="card-title">{{ reality_show1[i][0] }}</p>
+                </div>
             </div>
-        </div>
+        {% endfor %}
     </div>
+</div>
 {% endblock content %}

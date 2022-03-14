@@ -1,8 +1,13 @@
+*{
+    margin:0px;
+
+}
 body{
     font-family: 'Tahoma', sans-serif;
     color: aliceblue;
     background-color: rgb(33, 36, 51);
 }
+
 
 .container{
     align-content: center;
@@ -16,20 +21,23 @@ body{
     transition: transform 450ms;
     text-align: center;
     background-color: transparent;
+    padding: 3px;
+    margin: 3px;
 }
 
 .card-group {
     display:flex;
     align-content: center;
-    overflow-y:hidden;
+    overflow-y:visible;
     overflow-x: scroll;
-    padding: 25px;
-    
+    padding: 8px;
+    margin: 10px;
 }
 
 .card-title{
     font-size: large;
 }
+
 
 .card-img {
     border: 2px solid darkslategrey;
@@ -38,8 +46,10 @@ body{
 
 .card:hover{
     transform: scale(1.15);
-    border:2px solid rgb(12, 17, 17);
-    border-radius: 30px;
+    box-shadow: 4px rgb(217, 217, 231);
+    border: 15px;
+    border-color: #a88734 #9c7e31 #f0c14b;
+    border-radius: 20px;
     padding: 15px;
 }
 
