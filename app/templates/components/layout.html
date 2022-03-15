@@ -29,7 +29,7 @@
             <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('action_shows') }}">Action</a>
+            <a class="nav-link" href="{{ url_for('action_shows') }}">Action<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="{{ url_for('comedy_shows') }}">Comedy<span class="sr-only">(current)</span></a>
@@ -51,6 +51,9 @@
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="{{ url_for('thriller') }}">Thriller<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for('search') }}">Show Search<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item dropdown">
               Genres
