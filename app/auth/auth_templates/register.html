@@ -1,0 +1,36 @@
+{% extends 'base.html' %} 
+
+{% block content %} 
+<h3 class="text-center">Register</h3>
+<form method="POST">
+    {{ rform.hidden_tag() }}
+    <div class ='form-group mt-5 mt-5'>
+        <fieldset id="username-field mt-5">
+            {{ rform.username.label }}
+            {{ rform.username(class='form-control', placeholder='Username') }}
+        </fieldset>
+        <fieldset id="email-field mt-5">
+            {{ rform.email.label }}
+            {{ rform.email(class='form-control', placeholder='E-Mail') }}
+        </fieldset>
+        <fieldset id="first_name-field mt-5">
+            {{ rform.first_name.label }}
+            {{ rform.first_name(class='form-control', placeholder='First Name') }}
+        </fieldset>
+        <fieldset id="last_name-field mt-5">
+            {{ rform.last_name.label }}
+            {{ rform.last_name(class='form-control', placeholder='Last Name') }}
+        </fieldset>
+        <fieldset id="password-field mt-5">
+            {{ rform.password.label }}
+            {{ rform.password(class='form-control', placeholder='Enter Your Password') }}
+        </fieldset>
+        <fieldset id="confirm_password-field mt-5">
+            {{ rform.confirm_password.label }}
+            {{ rform.confirm_password(class='form-control', placeholder='Confirm Your Password') }}
+        </fieldset>
+        <br>
+        {{ rform.submit(class='btn btn-block btn-dark') }}
+    </div>
+</form>
+{% endblock content %}
