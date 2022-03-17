@@ -5,7 +5,8 @@
 {% endblock title %}
 
 {% block content %}
-<div class="row">
+<h5 class="group-header text-center">Thrillers</h5>
+<div class="row justify-content-center">
     <div class="card-group">
         {% for i in range(thrillers1|length) %}
             <div class="card">
@@ -17,7 +18,7 @@
         {% endfor %}
     </div>
 </div>
-<div class="row">
+<div class="row justify-content-center">
     <div class="card-group">
         {% for i in range(thrillers2|length) %}
             <div class="card">

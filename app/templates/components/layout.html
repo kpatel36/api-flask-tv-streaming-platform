@@ -24,11 +24,11 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+        <div class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="{{ url_for('action_shows') }}">Action<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
@@ -69,7 +69,15 @@
               <a class="dropdown-item" href="{{ url_for('thriller') }}">Thriller</a> 
             </div>
           </li>
-        </ul>
+        </div>
+        <div class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for('auth.signin') }}">LOGIN</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for('auth.register') }}">REGISTER</a>
+          </li>
+        </div>
       </div>
     </nav>
     <div>

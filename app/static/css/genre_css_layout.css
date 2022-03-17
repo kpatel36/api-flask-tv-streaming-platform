@@ -23,9 +23,8 @@ body{
     transition: transform 450ms;
     text-align: center;
     background-color: transparent;
-    padding: 13px;
-/*    box-shadow: 0px 2px 1px 2px black;*/
-    margin: 19px;
+    padding: 10px;
+    margin: 5px 5px 8px 8px;
 }
 
 .card-group {
@@ -33,14 +32,13 @@ body{
     align-content: center;
     overflow-y:visible;
     overflow-x: scroll;
-    padding: 8px;
-    margin: 10px;
+    padding: 5px;
+    margin: 5px;
 }
 
 .card-title{
     font-size: large;
 }
-
 
 .card-img {
     border: 2px solid darkslategrey;
@@ -51,6 +49,9 @@ body{
     transform: scale(1.15);
 /*    border: 4px linear-gradient(#a88734 #9c7e31 #f0c14b);*/
     border-radius: 20px;
+    color:#10ffb7;
+    box-shadow: 0 0 5px #10ffb7;
+    text-shadow: 0 0 5px #10ffb7;
 }
 
 .card-group::-webkit-scrollbar {
