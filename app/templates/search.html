@@ -5,19 +5,32 @@
 <div class="row justify-content-center">
     <div class="col-6">
         <form class="form-inline" method="POST">
-            {{ searchform.hidden_tag() }}
+            {{ search_form.hidden_tag() }}
             <div class="form-group">
-                {{ searchform.showname.label(class="mr-2") }}
-                {{ searchform.showname(class="mr-2 form-control", placeholder="Show Name") }}
+                {{ search_form.showname(class="mr-2 form-control", placeholder="Show Name") }}
             </div>
-            {{ searchform.submit(class="btn btn-info") }}
+            {{ search_form.submit(class="btn btn-info") }}
         </form>
         <small id="showHelp" class="form-text text-muted">Enter the name of a show to look up</small>
     </div>
 </div>
-<div class="row justify-content-center">
-    <div class="col-8">
-        
+<div class="row">
+    <div class="card-group">
+        <h1 class ="search results header">Search Results</h1>
+        {% if searchform %}
+            <h3>Here are all the shows with that included your search term: "{{ form.showname }}"</h3>
+            {% for i in range(search_form|length) %}
+                <div class="card">
+                    <img src="{{ form[i][2] }}" class="card-img" alt="{{ form[i][0] }}">
+                    <div class="card-body">
+                        <p class="card-title">{{ form[i][0] }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %} 
+            <h3> There are no shows with that name. Try something else </h3>
+        {% endif %}
     </div>
 </div>
+
 {% endblock content %} 
