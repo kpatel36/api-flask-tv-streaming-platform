@@ -67,12 +67,12 @@ def create_series():
 
 # route for getting one new show - dynamic route
 # func for route will expect input coming through via url
-@api.route('/series/name/<string:show_title>', methods=['GET'])
-def getOneSeries(name):
+@api.route('/series/show_title/<string:show_title>', methods=['GET'])
+def getOneSeries(show_title):
     """
     [GET] that accepts a series name through the url and either gets the series in our database or return that we dont have that series in our database
     """
-    tv = TelevisionSeries.query.filter_by(show_title=show_title()).first()
+    tv = TelevisionSeries.query.filter_by(show_title=show_title.title()).first()
     if tv:
         return jsonify(tv.to_dict()),200
     else:

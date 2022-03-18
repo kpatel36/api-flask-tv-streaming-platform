@@ -98,7 +98,7 @@ def search():
             datapick = r.get(f'https://api.tvmaze.com/search/shows?q={search_form.showname.data}').json()
         results[datapick['name']]=datapick['id']
         print(results)
-        search_form=show_info(results)
+        seriesreturn=show_info(results)
         # if (search_form.showname.data).strip().count(' ') > 0:
         #     new_string="+".join((search_form.showname.data).split(' '))
         #     datapick=r.get(f'https://api.tvmaze.com/search/shows?q={new_string}').json()
@@ -117,7 +117,7 @@ def search():
         #     results[datapick[i]['show']['name']]=datapick[i]['show']['id']
         # print(results)
         # search_form=show_info(results)
-        return render_template('search.html', search_form=search_form) 
+        return render_template('search.html', search_form=search_form, seriesreturn=seriesreturn) 
     return render_template('search.html', search_form=search_form) # works for our get requests
 
 
