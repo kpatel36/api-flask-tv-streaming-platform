@@ -16,14 +16,14 @@
 </div>
 <div class="row">
     <div class="card-group">
-        <h1 class ="search results header">Search Results</h1>
-        {% if searchform %}
-            <h3>Here are all the shows with that included your search term: "{{ form.showname }}"</h3>
+        <h1 class ="search results headersearch_formSearch Results"></h1>
+        {% if my_list %}
+            <h3>Here are all the shows with that included your search term: "{{ search_form.showname }}"</h3>
             {% for i in range(search_form|length) %}
                 <div class="card">
-                    <img src="{{ form[i][2] }}" class="card-img" alt="{{ form[i][0] }}">
+                    <img src="{{ search_form[i][2] }}" class="card-img" alt="{{ search_form[i][0] }}">
                     <div class="card-body">
-                        <p class="card-title">{{ form[i][0] }}</p>
+                        <p class="card-title">{{ search_form[i][0] }}</p>
                     </div>
                 </div>
             {% endfor %}

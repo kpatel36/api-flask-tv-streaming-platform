@@ -32,8 +32,8 @@ body{
     align-content: center;
     overflow-y:visible;
     overflow-x: scroll;
-    padding: 5px;
-    margin: 5px;
+    padding: 10px;
+    margin: 10px;
 }
 
 .card-title{
@@ -49,8 +49,6 @@ body{
     transform: scale(1.15);
 /*    border: 4px linear-gradient(#a88734 #9c7e31 #f0c14b);*/
     border-radius: 20px;
-    color:#10ffb7;
-    box-shadow: 0 0 5px #10ffb7;
     text-shadow: 0 0 5px #10ffb7;
 }
 

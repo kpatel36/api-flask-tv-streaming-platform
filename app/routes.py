@@ -80,26 +80,44 @@ def thriller():
 @app.route('/search', methods=['GET','POST'])
 def search():
     search_form = ShowSearch() # instantiation of ShowSearch class; will be used in both Get and Post sides of this route
+    print(search_form)
+    datapick=[]
     if request.method =="POST":
         results={}
         if (search_form.showname.data).strip().count(' ') > 0:
             new_string="+".join((search_form.showname.data).split(' '))
-            datapick=r.get(f'https://api.tvmaze.com/search/shows?q={new_string}').json()
-            print(f'type1 + {type(datapick)}, {len(datapick)}')
-            print ([datapick[i]['show']['name'] for i in range(len(datapick))])
+            datapick=r.get(f'https://api.tvmaze.com/singlesearch/shows?q={new_string}').json()
+            print(f'type1 + {type(datapick)}, {len(datapick)}')        
+            print (datapick['name'])
         elif (search_form.showname.data).strip().count(' ') == 0:
             print(search_form.showname.data)
-            datapick =r.get(f'https://api.tvmaze.com/search/shows?q={search_form.showname.data}').json()
-            listindeces = [datapick[i]['show']['name'] for i in range(len(datapick)) if type(datapick)==list ]
-            print(type(datapick))
-            print(listindeces)
-            print ('type2')
+            name=search_form.showname.data
+            print(f'name: {name}')
+            datapick =r.get(f'https://api.tvmaze.com/singlesearch/shows?q={name}').json()
         else:
             datapick = r.get(f'https://api.tvmaze.com/search/shows?q={search_form.showname.data}').json()
-        for i in range(len(datapick)):
-            results[datapick[i]['show']['name']]=datapick[i]['show']['id']
+        results[datapick['name']]=datapick['id']
+        print(results)
         search_form=show_info(results)
-        return render_template('search.html', search_form=search_form)
+        # if (search_form.showname.data).strip().count(' ') > 0:
+        #     new_string="+".join((search_form.showname.data).split(' '))
+        #     datapick=r.get(f'https://api.tvmaze.com/search/shows?q={new_string}').json()
+        #     print(f'type1 + {type(datapick)}, {len(datapick)}')
+        #     print ([datapick[i]['show']['name'] for i in range(len(datapick))])
+        # elif (search_form.showname.data).strip().count(' ') == 0:
+        #     print(search_form.showname.data)
+        #     datapick =r.get(f'https://api.tvmaze.com/search/shows?q={search_form.showname.data}').json()
+        #     listindeces = [datapick[i]['show']['name'] for i in range(len(datapick)) if type(datapick)==list ]
+        #     print(type(datapick))
+        #     print(listindeces)
+        #     print ('type2')
+        # else:
+        #     datapick = r.get(f'https://api.tvmaze.com/search/shows?q={search_form.showname.data}').json()
+        # for i in range(len(datapick)):
+        #     results[datapick[i]['show']['name']]=datapick[i]['show']['id']
+        # print(results)
+        # search_form=show_info(results)
+        return render_template('search.html', search_form=search_form) 
     return render_template('search.html', search_form=search_form) # works for our get requests
 
 
